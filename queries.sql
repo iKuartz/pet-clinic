@@ -58,7 +58,7 @@ FROM
 WHERE
     weight_kg BETWEEN 0010.400 AND 0017.300;
 
--- Second Milestone
+-- Second Milestone completed
 
 BEGIN;
 UPDATE
