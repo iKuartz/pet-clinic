@@ -1,7 +1,7 @@
 /* Database schema to keep the structure of entire database. */
 
 CREATE TABLE animals (
-   id SERIAL PRIMARY KEY,
+   id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
    name VARCHAR(50) NOT NULL,
    date_of_birth DATE NOT NULL,
    escape_attempts INT  NOT NULL,
@@ -13,14 +13,14 @@ ALTER TABLE animals
     ADD species VARCHAR(100);
 
 CREATE TABLE owners (
-    id int GENERATED ALWAYS AS IDENTITY,
+    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     full_name varchar(100),
     age int,
     PRIMARY KEY (id)
 );
 
 CREATE TABLE species (
-    id int GENERATED ALWAYS AS IDENTITY,
+    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name varchar(100),
     PRIMARY KEY (id)
 );
