@@ -163,3 +163,73 @@ WHERE
     EXTRACT(year FROM date_of_birth) BETWEEN 1990 AND 2000
 GROUP BY
     species;
+    
+-- Third Milestone
+SELECT
+    owners.full_name AS owner,
+    animals.name
+FROM
+    animals
+    JOIN owners ON animals.owner_id = owners.id
+WHERE
+    owners.full_name = 'Melody Pond';
+
+SELECT
+    animals.name,
+    species.name AS type
+FROM
+    animals
+    JOIN species ON animals.species_id = species.id
+WHERE
+    species.name = 'Pokemon';
+
+SELECT
+    owners.full_name AS owners,
+    animals.name AS animal_name
+FROM
+    owners
+    LEFT JOIN animals ON animals.owner_id = owners.id;
+
+SELECT
+    species.name AS type,
+    count(animals.*)
+FROM
+    animals
+    JOIN species ON animals.species_id = species.id
+GROUP BY
+    species.name;
+
+SELECT
+    owners.full_name AS owner,
+    animals.name,
+    species.name AS type
+FROM
+    animals
+    JOIN species ON animals.species_id = species.id
+    JOIN owners ON animals.owner_id = owners.id
+WHERE
+    species.name = 'Digimon'
+    AND owners.full_name = 'Jennifer Orwell';
+
+SELECT
+    owners.full_name AS owner,
+    animals.name,
+    animals.escape_attempts
+FROM
+    animals
+    JOIN owners ON animals.owner_id = owners.id
+WHERE
+    owners.full_name = 'Dean Winchester'
+    AND animals.escape_attempts = 0;
+
+SELECT
+    owners.full_name AS owns_most_animals,
+    count(animals.*)
+FROM
+    animals
+    JOIN owners ON animals.owner_id = owners.id
+GROUP BY
+    owners.full_name
+ORDER BY
+    count(animals.*) DESC
+LIMIT 1;
