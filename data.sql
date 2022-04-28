@@ -132,3 +132,44 @@ SELECT
 FROM
     animals;
 COMMIT;
+
+
+INSERT INTO 
+vets (name,age,date_of_graduation)
+    VALUES
+    ('William Tatcher', 45, '2000-04-23'::date),
+    ('Maisy Smith', 26, '2019-01-17'::date),
+    ('Stephanie Mendez', 64, '1981-05-04'::date),
+    ('Jack Harkness', 38, '2008-06-08'::date);
+
+INSERT INTO
+specializations (vets_id,species_id)
+    VALUES
+    (1, 1),
+    (3, 1),
+    (3, 2),
+    (4, 2);
+
+INSERT INTO 
+visits (animals_id,vets_id,date_of_visit)
+    VALUES 
+    (1, 1, '2020-05-24'::date),
+    (1, 3, '2020-07-22'::date),
+    (2, 4, '2021-02-02'::date),
+    (3, 2, '2020-01-05'::date),
+    (3, 2, '2020-03-08'::date),
+    (3, 2, '2020-05-14'::date),
+    (4, 3, '2021-05-04'::date),
+    (5, 4, '2021-02-24'::date),
+    (6, 2, '2019-12-21'::date),
+    (6, 1, '2020-08-10'::date),
+    (6, 2, '2021-04-07'::date),
+    (7, 3, '2019-09-29'::date),
+    (8, 4, '2020-10-03'::date),
+    (8, 4, '2020-11-04'::date),
+    (9, 2, '2019-01-24'::date),
+    (9, 2, '2019-05-15'::date),
+    (9, 2, '2020-02-27'::date),
+    (9, 2, '2020-08-03'::date),
+    (10, 3, '2020-05-24'::date),
+    (10, 1, '2021-01-11'::date);
