@@ -8,6 +8,8 @@ This is a relational database with the data structure for a vet clinic; a comple
 
 Apart from building data structure, the database will create SQL queries to answer specific questions.
 
+You can visualize the structure of the database [Here](https://dbdiagram.io/d/6271850a7f945876b6ae4106)
+
 ## Getting Started
 
 This repository includes files with plain SQL that can be used to recreate a database:
